@@ -3,6 +3,3 @@ title: "ISSS608-VAA_demo"
 ---
 
 **Welcome to ISSS608 Visual Analytics and Application!**
-
-```{}
-```

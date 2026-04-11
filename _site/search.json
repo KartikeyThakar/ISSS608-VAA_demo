@@ -12,5 +12,12 @@
     "title": "ISSS608-VAA_demo",
     "section": "",
     "text": "Welcome to ISSS608 Visual Analytics and Application!"
+  },
+  {
+    "objectID": "HO_EX01.html",
+    "href": "HO_EX01.html",
+    "title": "Hands-on-Exercise_1",
+    "section": "",
+    "text": "pacman::p_load(tidyverse)"
   }
 ]

@@ -3,7 +3,7 @@ title: "ISSS608-Visual Analytics & Application"
 ---
 
 **Hi, I'm Kartikey Thakar** 👋
-**Welcome to my Visual Analytics and Application course home page, where data gets dressed up and actually makes sense. I'm a student at SMU figuring out how to turn numbers into stories**
+**Welcome to my Visual Analytics and Application course home page, where data gets dressed up and actually makes sense. I'm a student at SMU figuring out how to turn numbers into stories.**
 
 ## What You'll Find Here
 

@@ -13,7 +13,9 @@ website:
       - text: "About"
         href: about.qmd
       - text: "Hands-on Exercise"
-        href: HO_EX01.qmd
+        menu:
+          - text: "Hands on Exercise 1"
+            href: HO_EX01.qmd
 
 format:
   html:

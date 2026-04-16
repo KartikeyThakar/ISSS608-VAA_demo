@@ -28,6 +28,14 @@ and to gain hands-on experience creating a variety of chart types.
 
 ---
 
+## What I'll learn
+By the end of this exercise I will be able to:
+
+- Describe the key principles of the Grammar of Graphics
+- Create a variety of statistical charts using ggplot2
+- Customise charts using aesthetics, facets, and themes
+
+
 ## Getting Started
 
 ### Loading the Libraries

@@ -28,6 +28,13 @@
     "text": "In this hands-on exercise, I explore the foundations of data visualisation in R using ggplot2, which is built on the principles of the Layered Grammar of Graphics. The goal is to understand how each grammatical layer contributes to building meaningful statistical graphics, and to gain hands-on experience creating a variety of chart types."
   },
   {
+    "objectID": "HO_EX01.html#getting-started",
+    "href": "HO_EX01.html#getting-started",
+    "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
+    "section": "Getting Started",
+    "text": "Getting Started\n\nLoading the Libraries\nTo get started, I will use the pacman package to load tidyverse, which includes ggplot2 and other essential data wrangling tools. Using p_load() is convenient as it installs the package if it isn’t already installed, then loads it.\n\npacman::p_load(tidyverse)\n\n\n\nImporting the Data\nNext, I import the dataset using read_csv() from the readr package (part of tidyverse). The dataset contains year-end examination scores for a cohort of Primary 3 students, with the following variables:\n\nCategorical: ID, CLASS, GENDER, RACE\nContinuous: ENGLISH, MATHS, SCIENCE\n\n\nexam_data &lt;- read_csv(\"data/Exam_data.csv\")"
+  },
+  {
     "objectID": "HO_EX01.html#introducing-ggplot2",
     "href": "HO_EX01.html#introducing-ggplot2",
     "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
@@ -96,12 +103,5 @@
     "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
     "section": "References",
     "text": "References\n\nHadley Wickham (2023) ggplot2: Elegant Graphics for Data Analysis. Online 3rd edition.\nWinston Chang (2013) R Graphics Cookbook, 2nd edition.\nHealy, Kieran (2019) Data Visualization: A practical introduction."
-  },
-  {
-    "objectID": "HO_EX01.html#getting-started",
-    "href": "HO_EX01.html#getting-started",
-    "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
-    "section": "Getting Started",
-    "text": "Getting Started\n\nLoading the Libraries\nTo get started, I will use the pacman package to load tidyverse, which includes ggplot2 and other essential data wrangling tools. Using p_load() is convenient as it installs the package if it isn’t already installed, then loads it.\n\npacman::p_load(tidyverse)\n\n\n\nImporting the Data\nNext, I import the dataset using read_csv() from the readr package (part of tidyverse). The dataset contains year-end examination scores for a cohort of Primary 3 students, with the following variables:\n\nCategorical: ID, CLASS, GENDER, RACE\nContinuous: ENGLISH, MATHS, SCIENCE\n\n\nexam_data &lt;- read_csv(\"data/Exam_data.csv\")"
   }
 ]

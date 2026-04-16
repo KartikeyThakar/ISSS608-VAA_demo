@@ -3,6 +3,13 @@ title: "Hands-on-Exercise 1: A Layered Grammer of Graphics"
 author: "Kartikey Thakar"
 Date: "April 10, 2026"
 date-modified: "last-modified"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: false
+    fig-width: 10
+    fig-height: 6
 execute: 
   eval: true
   echo: true

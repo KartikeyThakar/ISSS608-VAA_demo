@@ -4,7 +4,21 @@
     "href": "index.html",
     "title": "ISSS608-Visual Analytics & Application",
     "section": "",
-    "text": "Welcome to my Visual Analytics and Application course home page"
+    "text": "Hi, I’m Kartikey Thakar 👋 Welcome to my Visual Analytics and Application course home page, where data gets dressed up and actually makes sense. I’m a student at SMU figuring out how to turn numbers into stories"
+  },
+  {
+    "objectID": "index.html#what-youll-find-here",
+    "href": "index.html#what-youll-find-here",
+    "title": "ISSS608-Visual Analytics & Application",
+    "section": "What You’ll Find Here",
+    "text": "What You’ll Find Here\n\n\n\n\n\n\n\nSection\nWhat’s Inside\n\n\n\n\n🖐️ Hands-on Exercises\nIn-class exercises working through core VA concepts\n\n\n📝 Take-home Exercises\nGraded assignments where I go deeper independently"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "HO_EX01.html",
@@ -96,12 +110,5 @@
     "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
     "section": "References",
     "text": "References\n\nHadley Wickham (2023) ggplot2: Elegant Graphics for Data Analysis. Online 3rd edition.\nWinston Chang (2013) R Graphics Cookbook, 2nd edition.\nHealy, Kieran (2019) Data Visualization: A practical introduction."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
   }
 ]

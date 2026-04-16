@@ -9,7 +9,3 @@ title: "ISSS608-Visual Analytics & Application"
 
 | Section | What's Inside |
 |---|---|
-| 🖐️ **Hands-on Exercises** | In-class exercises working through core VA concepts |
-| 📝 **Take-home Exercises** | Graded assignments where I go deeper independently |
-
----

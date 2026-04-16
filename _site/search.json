@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "ISSS608-Visual Analytics & Application",
     "section": "",
-    "text": "Welcome to my Visual Analytics and Application home page"
+    "text": "Welcome to my Visual Analytics and Application course home page"
   },
   {
     "objectID": "about.html",
@@ -16,8 +16,92 @@
   {
     "objectID": "HO_EX01.html",
     "href": "HO_EX01.html",
-    "title": "Hands-on-Exercise_1",
+    "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
     "section": "",
-    "text": "pacman::p_load(tidyverse)"
+    "text": "In this hands-on exercise, I explore the foundations of data visualisation in R using ggplot2, which is built on the principles of the Layered Grammar of Graphics. The goal is to understand how each grammatical layer contributes to building meaningful statistical graphics, and to gain hands-on experience creating a variety of chart types."
+  },
+  {
+    "objectID": "HO_EX01.html#overview",
+    "href": "HO_EX01.html#overview",
+    "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
+    "section": "",
+    "text": "In this hands-on exercise, I explore the foundations of data visualisation in R using ggplot2, which is built on the principles of the Layered Grammar of Graphics. The goal is to understand how each grammatical layer contributes to building meaningful statistical graphics, and to gain hands-on experience creating a variety of chart types."
+  },
+  {
+    "objectID": "HO_EX01.html#introducing-ggplot2",
+    "href": "HO_EX01.html#introducing-ggplot2",
+    "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
+    "section": "Introducing ggplot2",
+    "text": "Introducing ggplot2\n\nR Graphics vs ggplot2\nBefore diving into ggplot2, let me first compare it with Base R’s built-in graphics to understand why ggplot2 is preferred.\nUsing Base R:\n\nhist(exam_data$MATHS)\n\n\n\n\n\n\n\n\nNow the same histogram using ggplot2:\n\nggplot(data = exam_data, aes(x = MATHS)) +\n  geom_histogram(bins = 10,\n                 boundary = 100,\n                 color = \"black\",\n                 fill = \"grey\") +\n  ggtitle(\"Distribution of Maths scores\")\n\n\n\n\n\n\n\n\nWhile the Base R version is simpler to write, ggplot2 gives me much more control and flexibility over the visual output. More importantly, it encourages thinking about visualisation as a mapping between data variables and visual properties — a skill that transfers across all kinds of charts."
+  },
+  {
+    "objectID": "HO_EX01.html#grammar-of-graphics",
+    "href": "HO_EX01.html#grammar-of-graphics",
+    "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
+    "section": "Grammar of Graphics",
+    "text": "Grammar of Graphics\nggplot2 is built on Leland Wilkinson’s Grammar of Graphics, which breaks a graphic down into seven distinct layers:\n\n\n\n\n\n\n\nLayer\nDescription\n\n\n\n\nData\nThe dataset being plotted\n\n\nAesthetics\nMaps variables to visual properties like colour, size, position\n\n\nGeometrics\nThe visual marks — bars, points, lines, etc.\n\n\nFacets\nSplits data into small multiples for comparison\n\n\nStatistics\nSummarises data (e.g. means, confidence intervals)\n\n\nCoordinates\nDefines the plotting plane and axis system\n\n\nThemes\nControls non-data styling like fonts and backgrounds\n\n\n\nLet me now work through each of these layers one by one."
+  },
+  {
+    "objectID": "HO_EX01.html#essential-element-1-data",
+    "href": "HO_EX01.html#essential-element-1-data",
+    "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
+    "section": "Essential Element 1: Data",
+    "text": "Essential Element 1: Data\nI start by calling ggplot() with just the dataset. This gives me a blank canvas — ggplot2 knows what data to use, but hasn’t been told what to draw yet.\n\nggplot(data = exam_data)\n\n\n\n\n\n\n\n\nAs expected, nothing appears yet except an empty plot area."
+  },
+  {
+    "objectID": "HO_EX01.html#essential-element-2-aesthetic-mappings",
+    "href": "HO_EX01.html#essential-element-2-aesthetic-mappings",
+    "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
+    "section": "Essential Element 2: Aesthetic Mappings",
+    "text": "Essential Element 2: Aesthetic Mappings\nNext, I add an aesthetic mapping using aes() to tell ggplot2 which variable to place on the x-axis. This adds the axis and its label, but still no geometric shapes yet.\n\nggplot(data = exam_data,\n       aes(x = MATHS))"
+  },
+  {
+    "objectID": "HO_EX01.html#essential-element-3-geometric-objects",
+    "href": "HO_EX01.html#essential-element-3-geometric-objects",
+    "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
+    "section": "Essential Element 3: Geometric Objects",
+    "text": "Essential Element 3: Geometric Objects\nNow things get interesting. Geometric objects (geoms) are the actual visual marks placed on the plot. I will go through several geom types using the exam dataset.\n\ngeom_bar\nLet me start with a simple bar chart to visualise the count of students by race.\n\nggplot(data = exam_data,\n       aes(x = RACE)) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\ngeom_dotplot\nA dot plot is another way to visualise distribution, where each dot represents one observation. I also turn off the y-axis here since it is not meaningful in this context.\n\nggplot(data = exam_data,\n       aes(x = MATHS)) +\n  geom_dotplot(binwidth = 2.5,\n               dotsize = 0.5) +\n  scale_y_continuous(NULL,\n                     breaks = NULL)\n\n\n\n\n\n\n\n\n\n\ngeom_histogram\nA histogram is one of the most common ways to visualise the distribution of a continuous variable. Here I plot the distribution of Maths scores with 20 bins.\n\nggplot(data = exam_data,\n       aes(x = MATHS)) +\n  geom_histogram(bins = 20,\n                 color = \"black\",\n                 fill = \"light blue\")\n\n\n\n\n\n\n\n\nI can also map a categorical variable like GENDER to the fill aesthetic to see the distribution broken down by gender.\n\nggplot(data = exam_data,\n       aes(x = MATHS,\n           fill = GENDER)) +\n  geom_histogram(bins = 20,\n                 color = \"grey30\")\n\n\n\n\n\n\n\n\n\n\ngeom_density\nA kernel density plot is a smoothed alternative to the histogram, useful for continuous data from an underlying smooth distribution.\n\nggplot(data = exam_data,\n       aes(x = MATHS)) +\n  geom_density()\n\n\n\n\n\n\n\n\nBy mapping GENDER to the colour aesthetic, I can compare the distributions of Maths scores between male and female students.\n\nggplot(data = exam_data,\n       aes(x = MATHS,\n           colour = GENDER)) +\n  geom_density()\n\n\n\n\n\n\n\n\n\n\ngeom_boxplot\nBox plots are great for visualising the five-number summary (minimum, Q1, median, Q3, maximum) and identifying outliers. Here I compare Maths scores across genders.\n\nggplot(data = exam_data,\n       aes(y = MATHS,\n           x = GENDER)) +\n  geom_boxplot()\n\n\n\n\n\n\n\n\nI can also add notches to the box plot to help assess whether the medians between groups are statistically different. Non-overlapping notches suggest the medians differ.\n\nggplot(data = exam_data,\n       aes(y = MATHS,\n           x = GENDER)) +\n  geom_boxplot(notch = TRUE)\n\n\n\n\n\n\n\n\n\n\ngeom_violin\nViolin plots combine a box plot with a density plot, making it easier to compare distributions across groups visually.\n\nggplot(data = exam_data,\n       aes(y = MATHS,\n           x = GENDER)) +\n  geom_violin()\n\n\n\n\n\n\n\n\n\n\ngeom_point\nScatter plots are useful for exploring relationships between two continuous variables. Here I look at whether Maths and English scores are correlated.\n\nggplot(data = exam_data,\n       aes(x = MATHS,\n           y = ENGLISH)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\nCombining Geoms\nOne of the strengths of ggplot2 is that geoms can be layered on top of each other. Here I overlay individual data points on a box plot using geom_point() with jitter to avoid overplotting.\n\nggplot(data = exam_data,\n       aes(y = MATHS,\n           x = GENDER)) +\n  geom_boxplot() +\n  geom_point(position = \"jitter\",\n             size = 0.5)"
+  },
+  {
+    "objectID": "HO_EX01.html#essential-element-4-statistics",
+    "href": "HO_EX01.html#essential-element-4-statistics",
+    "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
+    "section": "Essential Element 4: Statistics",
+    "text": "Essential Element 4: Statistics\nStatistical transformations let me summarise data directly within the plot. Here I add the mean score as a red point on top of the box plots using stat_summary().\n\nggplot(data = exam_data,\n       aes(y = MATHS, x = GENDER)) +\n  geom_boxplot() +\n  stat_summary(geom = \"point\",\n               fun = \"mean\",\n               colour = \"red\",\n               size = 4)\n\n\n\n\n\n\n\n\nI can also use geom_smooth() to add a best-fit curve to a scatter plot. The default method is loess (locally weighted smoothing).\n\nggplot(data = exam_data,\n       aes(x = MATHS, y = ENGLISH)) +\n  geom_point() +\n  geom_smooth(linewidth = 0.5)\n\n\n\n\n\n\n\n\nAlternatively, I can switch to a linear regression line by specifying method = lm.\n\nggplot(data = exam_data,\n       aes(x = MATHS, y = ENGLISH)) +\n  geom_point() +\n  geom_smooth(method = lm,\n              linewidth = 0.5)"
+  },
+  {
+    "objectID": "HO_EX01.html#essential-element-5-facets",
+    "href": "HO_EX01.html#essential-element-5-facets",
+    "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
+    "section": "Essential Element 5: Facets",
+    "text": "Essential Element 5: Facets\nFacetting allows me to split the data into subsets and display each as a separate panel — great for comparing distributions across groups.\n\nfacet_wrap\nHere I use facet_wrap() to plot a histogram of Maths scores for each class, arranged in a 2D grid automatically.\n\nggplot(data = exam_data,\n       aes(x = MATHS)) +\n  geom_histogram(bins = 20) +\n  facet_wrap(~ CLASS)\n\n\n\n\n\n\n\n\n\n\nfacet_grid\nfacet_grid() lays panels out in a strict row-column matrix. Below I use it to display histograms across classes in a single row.\n\nggplot(data = exam_data,\n       aes(x = MATHS)) +\n  geom_histogram(bins = 20) +\n  facet_grid(~ CLASS)"
+  },
+  {
+    "objectID": "HO_EX01.html#essential-element-6-coordinates",
+    "href": "HO_EX01.html#essential-element-6-coordinates",
+    "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
+    "section": "Essential Element 6: Coordinates",
+    "text": "Essential Element 6: Coordinates\nCoordinate systems control how the axes are oriented and scaled.\n\ncoord_flip\nBy default, bar charts are vertical. I can flip the axes using coord_flip() to make it horizontal, which is often more readable when category labels are long.\n\nggplot(data = exam_data,\n       aes(x = RACE)) +\n  geom_bar() +\n  coord_flip()\n\n\n\n\n\n\n\n\n\n\ncoord_cartesian\nWhen comparing Maths and English scores on a scatter plot, both axes should have the same range for a fair visual comparison. I use coord_cartesian() to fix both axes to 0–100.\n\nggplot(data = exam_data,\n       aes(x = MATHS, y = ENGLISH)) +\n  geom_point() +\n  geom_smooth(method = lm,\n              linewidth = 0.5) +\n  coord_cartesian(xlim = c(0, 100),\n                  ylim = c(0, 100))"
+  },
+  {
+    "objectID": "HO_EX01.html#essential-element-7-themes",
+    "href": "HO_EX01.html#essential-element-7-themes",
+    "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
+    "section": "Essential Element 7: Themes",
+    "text": "Essential Element 7: Themes\nThemes let me change the overall look and feel of the plot without touching the data. Let me compare three built-in themes.\ntheme_gray() — the default ggplot2 theme:\n\nggplot(data = exam_data,\n       aes(x = RACE)) +\n  geom_bar() +\n  coord_flip() +\n  theme_gray()\n\n\n\n\n\n\n\n\ntheme_classic() — a cleaner look with no gridlines:\n\nggplot(data = exam_data,\n       aes(x = RACE)) +\n  geom_bar() +\n  coord_flip() +\n  theme_classic()\n\n\n\n\n\n\n\n\ntheme_minimal() — minimal styling, my personal preference for clean academic outputs:\n\nggplot(data = exam_data,\n       aes(x = RACE)) +\n  geom_bar() +\n  coord_flip() +\n  theme_minimal()"
+  },
+  {
+    "objectID": "HO_EX01.html#references",
+    "href": "HO_EX01.html#references",
+    "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
+    "section": "References",
+    "text": "References\n\nHadley Wickham (2023) ggplot2: Elegant Graphics for Data Analysis. Online 3rd edition.\nWinston Chang (2013) R Graphics Cookbook, 2nd edition.\nHealy, Kieran (2019) Data Visualization: A practical introduction."
+  },
+  {
+    "objectID": "HO_EX01.html#getting-started",
+    "href": "HO_EX01.html#getting-started",
+    "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
+    "section": "Getting Started",
+    "text": "Getting Started\n\nLoading the Libraries\nTo get started, I will use the pacman package to load tidyverse, which includes ggplot2 and other essential data wrangling tools. Using p_load() is convenient as it installs the package if it isn’t already installed, then loads it.\n\npacman::p_load(tidyverse)\n\n\n\nImporting the Data\nNext, I import the dataset using read_csv() from the readr package (part of tidyverse). The dataset contains year-end examination scores for a cohort of Primary 3 students, with the following variables:\n\nCategorical: ID, CLASS, GENDER, RACE\nContinuous: ENGLISH, MATHS, SCIENCE\n\n\nexam_data &lt;- read_csv(\"data/Exam_data.csv\")"
   }
 ]

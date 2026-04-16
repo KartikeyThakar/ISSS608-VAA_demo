@@ -35,6 +35,7 @@ By the end of this exercise I will be able to:
 - Create a variety of statistical charts using ggplot2
 - Customise charts using aesthetics, facets, and themes
 
+---
 
 ## Getting Started
 

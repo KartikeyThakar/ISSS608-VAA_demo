@@ -110,5 +110,12 @@
     "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
     "section": "References",
     "text": "References\n\nHadley Wickham (2023) ggplot2: Elegant Graphics for Data Analysis. Online 3rd edition.\nWinston Chang (2013) R Graphics Cookbook, 2nd edition.\nHealy, Kieran (2019) Data Visualization: A practical introduction."
+  },
+  {
+    "objectID": "HO_EX01.html#what-ill-learn",
+    "href": "HO_EX01.html#what-ill-learn",
+    "title": "Hands-on-Exercise 1: A Layered Grammer of Graphics",
+    "section": "What I’ll learn",
+    "text": "What I’ll learn\nBy the end of this exercise I will be able to:\n\nDescribe the key principles of the Grammar of Graphics\nCreate a variety of statistical charts using ggplot2\nCustomise charts using aesthetics, facets, and themes"
   }
 ]

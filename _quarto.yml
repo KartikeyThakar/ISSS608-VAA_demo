@@ -4,7 +4,7 @@ project:
 
 website:
   title: "ISSS608-Visual Analytics & Application"
-   navbar:
+  navbar:
     background: "#1B2A4A"
     foreground: "#FFFFFF"
     left:
@@ -20,5 +20,3 @@ format:
     theme: flatly
     css: styles.css
     toc: true
-editor: visual
-
